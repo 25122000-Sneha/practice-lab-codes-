@@ -1,0 +1,45 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Test App",
+            "program": "${workspaceFolder}/__m.js",
+            "request": "launch",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "postDebugTask": "Test App",
+            "type": "pwa-node"
+        },
+        {
+            "name": "Submit App",
+            "program": "${workspaceFolder}/__m.js",
+            "request": "launch",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "postDebugTask": "Submit App",
+            "type": "pwa-node"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ManytoonedemonewApplication<manytoonedemonew>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.ltimmappingdemo.manytoonedemonew.ManytoonedemonewApplication",
+            "projectName": "manytoonedemonew",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-PracticemappingApplication<practicemapping>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.practice1.practicemapping.PracticemappingApplication",
+            "projectName": "practicemapping",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
