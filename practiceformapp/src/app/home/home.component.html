@@ -1,0 +1,74 @@
+<div class="vh-100 d-flex justify-content-center align-items-center">
+    <div class="container">
+      <div class="row d-flex justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6">
+          <div class="border border-3 border-primary"></div>
+          <div class="card bg-white">
+            <div class="card-body p-5">
+              <form class="mb-3 mt-md-4" [formGroup]="itemForm" (ngSubmit)="onRegister()">
+                <h2 class="fw-bold mb-2 text-uppercase ">Banking Loan Application</h2>
+                <p class=" mb-5">Please enter your details here</p>
+                <div class="mb-3">
+                  
+                    <label for="FullName" class="form-label ">Full Name</label>
+                    <input type="text" name ="FullName"formControlName="FullName" [(ngModel)]="formModel.FullName" class="form-control" id="FullName" placeholder="Full Name">
+                    <div *ngIf="itemForm.controls['FullName'].invalid && (itemForm.controls['FullName'].dirty || itemForm.controls['FullName'].touched)"
+                    class="ng-dirty">
+                    <span *ngIf="itemForm.controls['FullName'].errors">
+                      <span class="text-danger">Please enter Full Name</span>
+                    </span>
+                  </div>
+                  </div>
+                <div class="mb-3">
+                    <label for="LoanAmount" class="form-label ">Loan Amount</label>
+                    <input type="number" name ="LoanAmount"formControlName="LoanAmount" [(ngModel)]="formModel.LoanAmount" class="form-control" id="LoanAmount" placeholder="Loan Amount">
+                    <div *ngIf="itemForm.controls['LoanAmount']?.invalid && (itemForm.controls['LoanAmount'].dirty || itemForm.controls['LoanAmount'].touched)"
+                    class="ng-dirty">
+                    <span *ngIf="itemForm.controls['LoanAmount'].errors">
+                      <span class="text-danger">Please Enter Loan Amount .</span>
+                      <span style="color: red;" *ngIf="itemForm.get('LoanAmount')?.hasError('min')">Your Amount must be greater than or equal to 1000.</span>
+                      <span style="color: red;" *ngIf="itemForm.get('LoanAmount')?.hasError('max')">Your Amount must be less than or equal to 100000.</span>
+                    </span>
+                  </div>
+                  </div>
+                <div class="mb-3">
+                  <label for="PurposeOfLoan" class="form-label ">Purpose Of Loan</label>
+                  <select type="PurposeOfLoan" name ="PurposeOfLoan"formControlName="PurposeOfLoan" [(ngModel)]="formModel.PurposeOfLoan" class="form-control" id="PurposeOfLoan">
+                    <option value="null">Select</option>
+                    <option value="House">House</option>
+                    <option value="Car">Car</option>
+                    <option value="Personal">Personal</option>
+                    <option value="Education">Education</option>
+                  </select>
+                  <div *ngIf="itemForm.controls['PurposeOfLoan'].invalid && (itemForm.controls['PurposeOfLoan'].dirty || itemForm.controls['PurposeOfLoan'].touched)"
+                  class="ng-dirty">
+                  <span *ngIf="itemForm.controls['PurposeOfLoan'].errors">
+                    <span class="text-danger">Please Enter Purpose Of Loan.</span>
+                  </span>
+                </div>
+                </div>
+                <div class="mb-3">
+                  <label for="Tenure" class="form-label ">Tenure</label>
+                  <input type="number" name="Tenure"  formControlName="Tenure" [(ngModel)]="formModel.Tenure" class="form-control" id="Tenure" placeholder="Tenure">
+                  <div *ngIf="itemForm.controls['Tenure'].invalid && (itemForm.controls['Tenure'].dirty || itemForm.controls['Tenure'].touched)"  class="ng-dirty">
+                  <span *ngIf="itemForm.controls['Tenure'].errors">
+                    <span class="text-danger">Please Enter Tenure .</span>
+                    <span style="color: red;" *ngIf="itemForm.get('Tenure')?.hasError('min')">Your Tenure must be greater than or equal to 1.</span>
+                    <span style="color: red;" *ngIf="itemForm.get('Tenure')?.hasError('max')">Your Tenure must be less than or equal to 30.</span>
+                </span>
+                </div>
+                </div>
+              
+                <div class="d-grid">
+                  <button class="btn btn-outline-dark" type="submit">Submit</button>
+                </div>
+              </form>
+            
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
